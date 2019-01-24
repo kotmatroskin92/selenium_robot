@@ -3,7 +3,7 @@ import os
 
 from configuration import configuration
 from configuration.configuration import ENV
-from framework.utils.JSONReader import JSONReader
+from framework.utils.JSONHandler import JSONHandler
 
 
 class ConfigReader:
@@ -14,7 +14,7 @@ class ConfigReader:
                                     'configuration', 'locale', '{0}', 'dictionary.json')
 
     def get_data(self, path_to_json):
-        return JSONReader.read_from_file(path_to_json.format(ENV))
+        return JSONHandler.read_from_file(path_to_json.format(ENV))
 
     def get_env_variable(self, name, default=None):
         from robot.libraries.BuiltIn import BuiltIn
