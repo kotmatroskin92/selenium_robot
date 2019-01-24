@@ -1,0 +1,11 @@
+allure-python-commons==2.5.4
+allure-robotframework==2.5.4
+attrs==18.2.0
+dpath==1.4.2
+Pillow==5.4.1
+pluggy==0.8.1
+requests==2.21.0
+robotframework==3.1.1
+selenium==3.141.0
+visual-logging==1.0
+webdriver-manager==1.7
