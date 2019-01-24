@@ -6,8 +6,8 @@ from configuration import configuration
 from framework.utils.ConfigReader import ConfigReader
 from framework.robotwrappers.RobotLogger import RobotLogger
 from framework.web.browser.BrowserFactory import BrowserFactory
-from framework.web.waits.WaitFor import WaitForReadyStateComplete
-from framework.web.waits.WaitFor import WaitForTrue
+from framework.web.waits.waitfor import WaitForReadyStateComplete
+from framework.web.waits.waitfor import WaitForTrue
 
 
 class Browser:
