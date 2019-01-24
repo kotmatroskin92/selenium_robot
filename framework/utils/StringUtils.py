@@ -3,7 +3,7 @@ import random
 import string
 
 
-class StringUtil:
+class StringUtils:
 
     @staticmethod
     def get_random_string(length=3):

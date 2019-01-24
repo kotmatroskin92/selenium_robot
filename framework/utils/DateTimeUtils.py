@@ -1,9 +1,9 @@
 # coding=utf-8
 from datetime import datetime, timezone
-from framework.constant.DateTimeConst import DateTimeConst
+from framework.constant import DateTimeConst
 
 
-class TimeUtil:
+class DateTimeUtils:
 
     @staticmethod
     def get_datetime_string(exp_format):
