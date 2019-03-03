@@ -6,7 +6,7 @@ from framework.robotwrappers.RobotLogger import RobotLogger
 
 
 class TestDataReader(object):
-    DICTIONARY = 'dict'
+    LOCALE = 'locale'
     TEST_DATA = 'test_data'
 
     def __get_dict_value__(self, data_dict, dot_sep_path, separator='.', raise_key_error=True):
@@ -27,7 +27,7 @@ class TestDataReader(object):
         data_path_string = full_data_path_string.replace(starts_with, '')
         data_dict = {}
 
-        if data_path_string.split('.')[0] == self.DICTIONARY:
+        if data_path_string.split('.')[0] == self.LOCALE:
             data_dict = ConfigReader().get_locale_dict()
         elif data_path_string.split('.')[0] == self.TEST_DATA:
             data_dict = ConfigReader().get_env_test_data()
@@ -38,7 +38,7 @@ class TestDataReader(object):
                                        raise_key_error=raise_key_error)
 
     def read_locale_dict(self, full_data_path_string, raise_key_error=True):
-        return self.read_data(full_data_path_string, self.DICTIONARY, raise_key_error=raise_key_error)
+        return self.read_data(full_data_path_string, self.LOCALE, raise_key_error=raise_key_error)
 
-    def read_env_test_data(self, full_data_path_string, raise_key_error=True):
+    def read_test_data(self, full_data_path_string, raise_key_error=True):
         return self.read_data(full_data_path_string, self.TEST_DATA, raise_key_error=raise_key_error)
