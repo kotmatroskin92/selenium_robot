@@ -23,7 +23,7 @@ class BrowserFactory:
             if browser == Browsers.BROWSER_CHROME:
                 chrome_options = ChromeOptions()
                 chrome_options.add_argument("--lang={}".format(locale))
-                if is_headless == 'y':
+                if is_headless == 'true':
                     chrome_options.add_argument("--headless")
                 return webdriver.Chrome(ChromeDriverManager().install(), chrome_options=chrome_options)
             elif browser == Browsers.BROWSER_FIREFOX:
