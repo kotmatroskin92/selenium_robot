@@ -7,6 +7,8 @@ Test Teardown   destroy driver
 
 *** Test Cases ***
 Type in search query field
+    [Documentation]    Put Testrail link here
+    [Tags]             testrailid=111
     Given navigate to main page
     And main page is opened
     When type in query field    @test_data.search.python
