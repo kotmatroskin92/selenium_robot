@@ -30,7 +30,8 @@ class ScreenshotUtils:
         RobotLogger.info(VisualRecord(screen_name, result_image))
 
     @staticmethod
-    def take_screenshot(driver=Browser.get_driver(), width=ScreenshotConst.IMG_WIDTH_MEDIUM):
+    def take_screenshot(width=ScreenshotConst.IMG_WIDTH_MEDIUM):
+        driver = Browser.get_driver()
         result_image = driver.get_screenshot_as_base64()
         logger.info('<img src="data:image/png;base64,{0}" width="{1}">'.format(result_image, width), html=True)
         allure.attach(driver.get_screenshot_as_png(), name='screenshot', attachment_type=AttachmentType.PNG)

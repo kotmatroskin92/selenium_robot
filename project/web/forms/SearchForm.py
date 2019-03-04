@@ -1,5 +1,7 @@
 # coding=utf-8
 from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+
 from framework.web.pages.BaseWebForm import BaseWebForm
 from framework.web.webelements.TextBox import TextBox
 
@@ -26,7 +28,8 @@ class SearchForm(BaseWebForm):
     def type_search_query(self, value):
         """Method implements type test_data value to query field"""
         self._txb_query_field_.send_keys(value)
+        self._txb_query_field_.send_keys(Keys.RETURN)
 
     def get_search_query(self):
         """Method implements get search query value"""
-        self._txb_query_field_.get_value()
+        return self._txb_query_field_.get_value()

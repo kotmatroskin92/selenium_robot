@@ -11,7 +11,7 @@ class TestDataReader(object):
 
     def __get_dict_value__(self, data_dict, dot_sep_path, separator='.', raise_key_error=True):
         try:
-            return dpath.util.get(dict, dot_sep_path, separator)
+            return dpath.util.get(data_dict, dot_sep_path, separator)
         except KeyError as e:
             if raise_key_error:
                 RobotLogger.error('Error "{}" during reading dict. Dot_sep_path: {}. Dict: {}'.format(e, dot_sep_path,

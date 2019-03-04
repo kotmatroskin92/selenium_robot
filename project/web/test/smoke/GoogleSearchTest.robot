@@ -11,7 +11,7 @@ Type in search query field
     [Tags]             testrailid=111
     Given navigate to main page
     And main page is opened
-    When type in query field    @test_data.search.python
-    And click search
+    When type in query field    @test_data.search.python_query
+#    And click search
     Then result page is opened
-    And search query is displayed    @test_data.search.python
+    And search query is displayed    @test_data.search.python_query
