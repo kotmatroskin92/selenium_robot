@@ -118,12 +118,12 @@ class BaseWebElement(object):
         elements = self.get_elements()
         return next((elem for elem in elements if elem.is_displayed()), None)
 
-    def send_keys(self, key):
+    def send_keys(self, keys):
         def func(key):
             self.find_element().send_keys(key)
             return True
-        RobotLogger.info("Element %s send_keys('%s')" % (self.get_name(), key))
-        self.wait_for(func, key)
+        RobotLogger.info("Element %s send_keys('%s')" % (self.get_name(), keys))
+        self.wait_for(func, keys)
 
     def click(self):
         def func():
@@ -146,8 +146,8 @@ class BaseWebElement(object):
         return self.wait_for(func)
 
     def get_attribute(self, attr):
-        def func(attr):
-            return self.find_element().get_attribute(name=attr)
+        def func(value):
+            return self.find_element().get_attribute(name=value)
         RobotLogger.info("Element %s get_attribute('%s')" % (self.get_name(), attr))
         return self.wait_for(func, attr)
 
@@ -197,13 +197,13 @@ class BaseWebElement(object):
         self.wait_for(func)
 
     def wait_for_text(self, text):
-        def func(text):
-            return text in self.find_element().text
+        def func(value):
+            return value in self.find_element().text
         self.wait_for(func, text)
 
     def wait_for_value(self, text):
-        def func(text):
-            return text in self.get_attribute("value")
+        def func(value):
+            return value in self.get_attribute("value")
         self.wait_for(func, text)
 
     def wait_for_visibility(self):

@@ -5,7 +5,7 @@ from selenium.webdriver.chrome.options import Options as ChromeOptions
 from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.firefox import GeckoDriverManager
 from webdriver_manager.microsoft import IEDriverManager
-from configuration import configuration
+from configuration import configuration as config
 from framework.constant import Browsers
 from framework.utils.ConfigReader import ConfigReader
 
@@ -29,7 +29,7 @@ class BrowserFactory:
             elif browser == Browsers.BROWSER_FIREFOX:
                 firefox_profile = FirefoxProfile()
                 firefox_profile.set_preference("intl.accept_languages", locale)
-                return webdriver.Firefox(executable_path=GeckoDriverManager(configuration.GECKODRIVER_VERSION).install(),
+                return webdriver.Firefox(executable_path=GeckoDriverManager(config.GECKODRIVER_VERSION).install(),
                                          firefox_profile=firefox_profile)
             elif browser == Browsers.IE:
                 return webdriver.Ie(IEDriverManager().install())
@@ -42,5 +42,5 @@ class BrowserFactory:
             # "enableVNC": configuration.IS_VNC_ENABLED,
             # "enableVideo": configuration.IS_VIDEO_ENABLED
         }
-        return webdriver.Remote(command_executor=configuration.SELENOID_URL,
+        return webdriver.Remote(command_executor=config.SELENOID_URL,
                                 desired_capabilities=capabilities)
