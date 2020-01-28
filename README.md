@@ -1,5 +1,5 @@
-# Selenium Robot Framework
-## Python 3 and Robot Framework.
+# Selenium and Appium Robot Framework
+## Python 3.7 and Robot Framework.
 This framework used for selenium web and api testing using PageObject. Can generate allure report.
 ## Install framework:
 - install Python 3.7
@@ -19,3 +19,10 @@ This framework used for selenium web and api testing using PageObject. Can gener
 `pabot --processes 2 project\web\test`
 - Run test using tags(testrailid for example)
 `robot --include testrailid=111 project\web`
+# Run Mobile test
+## Appium Settings
+- Set avd and appium setting to configuration/configuration.py
+- Store app.apk to configuration/environments dir and set "app_name" to config.json
+- Run test using robot
+
+

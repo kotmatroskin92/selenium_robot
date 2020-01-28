@@ -3,5 +3,10 @@
     "main": {
       "search_btn": "Поиск в Google"
     }
+  },
+  "screen": {
+    "start": {
+      "not_found_err": "Не найдено"
+    }
   }
 }
