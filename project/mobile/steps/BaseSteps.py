@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import os
-from configuration.configuration import COMMAND_EXECUTOR, DEVICE_NAME, VERSION, PLATFORM
+from configuration.configuration import COMMAND_EXECUTOR, DEVICE_NAME, VERSION, PLATFORM, NEW_COMMAND_TIMEOUT_SECONDS,\
+    AUTOMATION_NAME, NO_RESET
 from framework.mobile.driver.MobileDriver import MobileDriver
 from framework.utils.ConfigReader import ConfigReader
 from framework.utils.ScreenshotUtils import ScreenshotUtils
@@ -24,9 +25,8 @@ class BaseSteps:
                                                        app_name=app_name))
 
         and_app = dict(app=os.path.join(env_reader.get_env_base_path(), env_reader.get_env_config()['app_name']),
-                       platformName=PLATFORM,
-                       platformVersion=VERSION,
-                       deviceName=DEVICE_NAME)
+                       platformName=PLATFORM, platformVersion=VERSION, deviceName=DEVICE_NAME, noReset=NO_RESET,
+                       automationName=AUTOMATION_NAME, newCommandTimeout=NEW_COMMAND_TIMEOUT_SECONDS)
         dr_mobile = dict(command_executor=COMMAND_EXECUTOR,
                          desired_capabilities=and_app)
         self.driver = MobileDriver(dr_mobile=dr_mobile).driver
