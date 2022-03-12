@@ -2,7 +2,7 @@ allure-python-commons==2.5.4
 allure-robotframework==2.5.4
 attrs==18.2.0
 dpath==1.4.2
-Pillow==8.1.2
+Pillow==9.0.1
 pluggy==0.8.1
 requests==2.21.0
 robotframework==3.1.1
